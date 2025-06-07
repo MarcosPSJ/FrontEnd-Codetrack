@@ -73,7 +73,7 @@
           </svg>
           <h3 class="text-xl font-semibold mb-2">Produto não encontrado</h3>
           <p class="text-gray-600 mb-6">Verifique o código de barras e tente novamente</p>
-          <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700" @click="resetSearch">
+          <button @click="resetSearch" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400">
             Nova Busca
           </button>
         </div>
@@ -82,9 +82,8 @@
   </div>
 </template>
 
-
-<!-- <script>
-import Header from '../components/Header.vue';
+<script>
+import Header from '@/components/NavbarComponent.vue';
 
 export default {
   name: 'ProdutoBusca',
@@ -135,7 +134,7 @@ export default {
         this.notFound = false;
       } else {
         this.produto = null;
-        this.notFound = true;
+        this.notFound = true; // Exibe o card de erro
       }
     },
     resetSearch() {
@@ -146,25 +145,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.bg-background {
-  background-color: var(--background);
-}
-
-.text-primary {
-  color: var(--primary);
-}
-
-.h-24 {
-  height: 6rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-</style> -->

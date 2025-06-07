@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import InicioView from "../views/InicioView.vue";
 import SobreView from "../views/SobreView.vue";
+import ContatoView from "@/views/ContatoView.vue";
 import LoginView from "../views/LoginView.vue";
 import CadastroView from "../views/CadastroView.vue";
 import CadastroProdutoView from "../views/CadastroProdutoView.vue";
@@ -10,9 +11,7 @@ import ProdutoDetalheView from "../views/ProdutoDetalheView.vue";
 import PedidosView from "../views/PedidosView.vue";
 import ProdutosListagemView from "../views/ProdutosListagemView.vue";
 import PedidoDetalheView from "../views/PedidoDetalheView.vue";
-//import ProdutoCadastroCodeView from "../views/CadastroProdutoView.vue";
-//import ProdutoBuscaView from "../views/ProdutoBuscaView.vue";
-//import ProdutoCadastroView from "../views/ProdutoCadastroView.vue";
+import PedidoCadastroView from "../views/PedidoCadastroView.vue";
 
 const routes = [
   {
@@ -31,51 +30,57 @@ const routes = [
     component: SobreView,
   },
   {
+    path: "/contato",
+    name: "contato",
+    component: ContatoView,
+  },
+  {
     path: "/cadastro",
     name: "cadastro",
-    component: CadastroView
+    component: CadastroView,
   },
   {
     path: "/login",
     name: "login",
-    component: LoginView
+    component: LoginView,
   },
   {
     path: "/produtos/cadastro",
-    name: "produtos",
-    component: CadastroProdutoView
+    name: "produtos.cadastro",
+    component: CadastroProdutoView,
+  },
+  {
+    path: "/pedidos/cadastro",
+    name: "pedidos.cadastro",
+    component: PedidoCadastroView,
   },
   {
     path: "/listagem",
-    name: "produtoListagem",
+    name: "produtos.listagem",
     component: ProdutosListagemView,
   },
   {
     path: "/busca/codigo",
-    name: "busca",
-    component: BuscaCodigoView
+    name: "busca.codigo",
+    component: BuscaCodigoView,
   },
   {
     path: "/produtos/detalhe/:id",
-    name: "produtoDetalhe",
+    name: "produtos.detalhe",
     component: ProdutoDetalheView,
-    // props: true,
+    props: true,
   },
   {
     path: "/pedidos",
     name: "pedidos",
-    component: PedidosView
+    component: PedidosView,
   },
   {
     path: "/detalhes/pedido/:id",
-    name: "pedidoDetelhe",
-    component: PedidoDetalheView
+    name: "pedidos.detalhe",
+    component: PedidoDetalheView,
+    props: true,
   },
-  // {
-  //   path: "/busca/codigo",
-  //   name: "produtoBusca",
-  //   component: ProdutoBuscaView,
-  // },
 ];
 
 const router = createRouter({
@@ -84,4 +89,3 @@ const router = createRouter({
 });
 
 export default router;
-

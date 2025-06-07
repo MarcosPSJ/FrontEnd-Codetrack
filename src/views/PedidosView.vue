@@ -9,9 +9,9 @@
     <section class="bg-[#d8e5d3] p-8 rounded-2xl shadow-md">
       <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-black">Pedidos</h1>
-        <button class="flex items-center gap-2 bg-[#48A6A7] text-white px-4 py-2 rounded-lg font-semibold">
+        <router-link to="/pedidos/cadastro" class="flex items-center gap-2 bg-[#48A6A7] text-white px-4 py-2 rounded-lg font-semibold">
           <span class="text-xl">+</span> Novo Pedido
-        </button>
+        </router-link>
       </div>
 
       <div class="relative mb-6">
@@ -42,7 +42,9 @@
             <td class="py-2">{{ pedido.itens }}</td>
             <td class="py-2">R$ {{ pedido.total.toFixed(2) }}</td>
             <td class="py-2">
-              <img src="../assets/icons/eye.svg" class="w-6 h-6 cursor-pointer" />
+              <router-link :to="`/pedidos/${pedido.numero}`">
+                <img src="../assets/icons/eye.png" class=" ml-4 w-6 h-4 cursor-pointer" />
+              </router-link>
             </td>
           </tr>
         </tbody>
