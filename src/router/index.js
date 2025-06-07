@@ -65,10 +65,9 @@ const routes = [
     component: BuscaCodigoView,
   },
   {
-    path: "/produtos/detalhe/:id",
-    name: "produtos.detalhe",
-    component: ProdutoDetalheView,
-    props: true,
+    path: '/produtos/:codigoDeBarras',
+    name: 'ProdutoDetalhe',
+    component: ProdutoDetalheView
   },
   {
     path: "/pedidos",
